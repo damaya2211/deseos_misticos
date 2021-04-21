@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+{% with messages = get_flashed_messages() %}
+
+    {% if messages %}
+
+        {% for message in messages %}
+
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+             {{ message }} 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+{% endwith  %}
+ 
+
+
+<br>
+
+
+
+<div class="container mb-2 mt-2">
+    <div class="pb-4 text-center">
+        <h2 class="fw-bold" style="font-size: 35px;">Blog el Portal Esotérico</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, sem ut sagittis laoreet 
+            libero imperdiet et scelerisque, cras quisque ullamcorper primis aliquet risus. 
+            Nostra a varius libero dapibus eros blandit bibendum tellus vivamus placerat ante, 
+            ullamcorper sociosqu sagittis vehicula class</p>
+    </div>
+    
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for articulo in articulo %}
+        <div class="col">
+          <div class="card h-100">
+            <img src="uploads/{{ articulo.4 }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title fw-bold" style="font-size: 25px;"> {{ articulo.1 }} </h5>
+              <p class="card-text"> {{ articulo.2 }} </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted"> {{ articulo.3 }} </small>
+              <br>
+              <a href="/" class="btn btn-secondary mt-2 mb-2">Ver más</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}    
+    </div>
+     
+</div>
+
+{% endblock %}

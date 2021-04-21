@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+
+
+
+{% block body %}   
+
+<section>	
+    <div id="banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-12-medium">
+  
+            <!-- Banner Copy -->
+              <p>Tienes Problemas en el Amor? Tu pareja a cambiado? No duermes bien en la noche (No descansas)? Sientes dolores sin ningun motivo aparente?...</p>
+              <a href="https://bit.ly/2VrZgF7" class="button-large">Consulta ya, click!</a>
+  
+          </div>
+          <div class="col-6 col-12-medium imp-medium">
+              <div class="video">	
+                <video id="video" src="images/botanicapresentación.mp4" width="640" height="360" controls muted autoplay preload>
+                            <source src="images/botanicapresentación.mov" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                            <source src="images/botanicapresentación.ogv" type='video/ogg; codecs="theora, vorbis"' />
+                            <source src="images/botanicapresentación.webm" type='video/webm; codecs="vp8, vorbis"'/> 	
+                </video>	
+                
+              </div>    
+                    
+            
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<section>
+  <div class="promo">
+      <h1>"HE LOGRADO QUE CADA PERSONA SANE SU HERIDA, ENCUENTRE EL AMOR, PERDONE Y SEA LIBRE DE ATADURAS Y LOGRE ASÍ CREAR PARA ÉL Y PARA TODOS UN MUNDO MÁS ARMÓNICO, MÁS VALIOSO Y ENFOCADO EN EL ENGRANDECIMIENTO DEL ESPÍRITU"</h1>
+</section>
+
+<!-- Features -->
+<section id="features">
+    <div class="container">
+        <div class="row">
+            {% for producto in producto %}
+            
+            <div class="col-3 col-6-medium col-12-small">   
+              <!-- Feature #1 -->
+                <section>
+                      <a href="uploads/{{ producto.4 }}" class="bordered-feature-image"><img src="uploads/{{ producto.4 }}" alt="" /></a>
+                          <h2>{{ producto.1 }}</h2>
+                          <p>{{ producto.3 }}</p>
+                </section>
+            </div>
+
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="promo">
+        <h3>Santeros especializados en casos imposibles, 100% Garantizado, Absoluta Reserva</h3>
+    </div>    
+</section>
+           
+<section>
+    <div id="banner">
+        <div class="container">
+            <div class="row">
+                {% for producto in producto %} 
+                <div class="col-6 col-12-medium">
+                   
+                    <header>
+                        <a href="" class="bordered-feature-image2"><img src="uploads/{{ producto.4 }}" alt="" /></a>
+                    </header>
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="col-md-6 offset-md-3">
+  <div class="card card-body">
+       <h3 style="font-size: 35px; padding-top: 15px;">Editar Productos</h3>
+    <form action="/carga/{{ articulo.0 }}" method="POST">
+        <div class="form-group pt-2">
+            <input type="text" name="titulo" placeholder="titulo" value="{{ articulo.1 }}" class="form-control">
+        </div>
+        <div class="form-group pt-2">
+            <input type="text" name="subtitulo" placeholder="subtitulo" value="{{ articulo.2 }}" class="form-control">
+        </div>
+        
+        <div class="form-group pt-2">
+            <input type="text" name="parrafo" placeholder="parrafo" value="{{ articulo.3 }}" class="form-control">
+        </div>
+        <div class="form-group pt-2">
+            <input type="file" name="foto" value="{{ articulo.4 }}" class="form-control">
+        </div>
+        <div class="form-group pt-2">
+            <button type="submit" class="btn btn-primary btn-block form-control">
+            Enviar           
+            </button>
+        </div>
+    </form>
+  </div>
+</div>
+
+
+<form method="post" action="/carga/{{ articulo.0 }}" enctype="multipart/form-data">
+
+    Nombre:
+    <input type="text" name="titulo" placeholder="titulo" value="{{ articulo.1 }}" class="form-control">
+    
+    Precio:
+    <input type="text" name="subtitulo" placeholder="subtitulo" value="{{ articulo.2 }}" class="form-control">
+    
+    Cantidad:
+    <input type="text" name="parrafo" placeholder="parrafo" value="{{ articulo.3 }}" class="form-control">
+    
+    Foto:
+    <input type="file" name="foto" value="{{ articulo.4 }}" class="form-control">
+    
+    <input type="submit" value="">
+</form>
+
+{% endblock %}

@@ -64,7 +64,7 @@ def Contacto():
 
 @app.route('/blog')
 def blog():
-   return render_template('blog.html', articulo= data)
+   return render_template('blog.html')
 
          
 
@@ -72,12 +72,5 @@ def blog():
 
 
 
-@app.route('/amarre_de_amor')
-def amarre():
-    return render_template('amarre_de_amor.html')
-
-
-
-
 if __name__=='__main__':
-    app.run(host="0.0.0.0" port=80, debug=True)
+    app.run(host="0.0.0.0", port=80, debug=True)

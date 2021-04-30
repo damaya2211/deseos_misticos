@@ -34,15 +34,7 @@ app.secret_key = 'abjkhasd22Ht4lEms5289'
 
 @app.route('/signup')
 def signup():
-    cur = mysql.connection.cursor()
-    cur.execute('SELECT * FROM admin')
-    data = cur.fetchall()
-    return render_template('signup.html', admin= data)
-
-
-@app.route("/agregar_admin", methods = ['POST'])
-def agregar_admin()
-        return redirect(url_for('createadmin'))
+    return render_template('signup.html')
 
 
 
@@ -70,10 +62,7 @@ def Index():
 
 @app.route('/nosotros')
 def Nosotros():
-    cur = mysql.connection.cursor()
-    cur.execute('SELECT * FROM productos')
-    data = cur.fetchall()
-    return render_template('nosotros.html', producto= data)
+    return render_template('nosotros.html')
 
 
 
@@ -113,7 +102,7 @@ def createservicios():
 
 # principio contacto
 @app.route('/contacto')
-def Contacto()
+def Contacto():
     return render_template('contacto.html')
 
 #fin contacto
